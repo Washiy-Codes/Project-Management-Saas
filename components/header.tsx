@@ -2,6 +2,7 @@
 import { buttonVariants } from '@/components/ui/button'
 import { LucideKanban } from 'lucide-react'
 import Link from 'next/link'
+import { Button } from "@/components/ui/button"
 
 const Header = () => {
   return (
@@ -17,9 +18,10 @@ const Header = () => {
       </div>
 
       <div className="flex items-center gap-2">
-        <h1>Toggle theme</h1>
+        <Link href="/tasks">
+         <Button variant="default">Tasks</Button>
+        </Link>
       </div>
-
     </nav>
   )
 }
