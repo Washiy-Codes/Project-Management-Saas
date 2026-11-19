@@ -1,43 +1,10 @@
-
-// import { data } from "../../../initial-data";
-// import { notFound } from "next/navigation";
-
-// type Props = {
-//   params: Promise<{
-//     id: string;
-//   }>;
-// };
-
-// const TaskDetails = async ({ params }: Props) => {
-//   const { id } = await params;
-
-//   const task = data.find((task) => task.id === id);
-
-//   if (!task) {
-//     notFound();
-//   }
-
-//   return (
-//     <div className="mt-18 p-5">
-//       <h1 className="text-2xl font-bold">
-//         {task.title}
-//       </h1>
-
-//       <p className="mt-3">
-//         {task.description}
-//       </p>
-
-//       <p className="mt-3">
-//         Status: {task.status}
-//       </p>
-//     </div>
-//   );
-// };
-
-// export default TaskDetails;
-
-
-
+import { taskStatus } from "@/lib/task-status";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 import { data } from "../../../initial-data";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
@@ -48,7 +15,6 @@ type Props = {
   }>;
 };
 
-// This component handles the actual task details
 const TaskDetailsContent = async ({ params }: Props) => {
   const { id } = await params;
 
@@ -59,18 +25,15 @@ const TaskDetailsContent = async ({ params }: Props) => {
   }
 
   return (
-    <div className="mt-18 p-5">
-      <h1 className="text-2xl font-bold">
-        {task.title}
-      </h1>
-
-      <p className="mt-3">
+    <div className="flex flex-1 flex-col mt-8 p-4 gap-8 items-center ">
+    <Card className="w-full max-w-[420]">
+      <CardHeader>
+        <CardTitle>{taskStatus[task.status]} {task.title}</CardTitle>
+      </CardHeader>
+      <CardContent>
         {task.description}
-      </p>
-
-      <p className="mt-3">
-        Status: {task.status}
-      </p>
+      </CardContent>
+    </Card>
     </div>
   );
 };
