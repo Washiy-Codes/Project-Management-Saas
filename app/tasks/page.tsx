@@ -6,6 +6,7 @@ import {
   CardDescription,
   CardTitle,
 } from "@/components/ui/card"
+import {Heading} from "@/components/heading"
 // import { CircleCheckBig, CircleFadingCheck, TrendingUp } from "lucide-react";
 type Task = {
   id:string;
@@ -14,19 +15,10 @@ type Task = {
   status: string;
 };
 
-// export const taskStatus = {
-//   Pending: <TrendingUp />,
-//   "in progress": <CircleFadingCheck />,
-//   Done: <CircleCheckBig />
-// }
-
 const Tasks = () => {
   return (
     <div className="mt-18 flex flex-col flex-1 gap-y-8">
-        <div>
-          <h1 className="text-lg tracking-tight">Tasks</h1>
-          <p className="text-small">All tasks at one place</p>
-        </div>
+        <Heading title="Tasks" description="All tasks at one place"/>
       <div className="flex flex-1 items-center gap-y-4 flex-col">
       {data.map((task: Task) => (
         <Card key={task.id} className="w-full max-w-105 p-4">
@@ -35,7 +27,7 @@ const Tasks = () => {
             <span className="font-bold">{task.title}</span>
             </CardTitle>
           <CardDescription>{task.description}</CardDescription>
-         <Link
+         <Li nk
               href={`/tasks/${task.id}`}
               className="text-sm underline text-blue"
             >
