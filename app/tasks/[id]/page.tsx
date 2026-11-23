@@ -6,8 +6,11 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { data } from "../../../initial-data";
-import { notFound } from "next/navigation";
+// import { notFound } from "next/navigation";
 import { Suspense } from "react";
+import { Placeholder } from "@/components/placeholder";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 type Props = {
   params: Promise<{
@@ -21,7 +24,11 @@ const TaskDetailsContent = async ({ params }: Props) => {
   const task = data.find((task) => task.id === id);
 
   if (!task) {
-    notFound();
+    return <Placeholder label="Task not found" button= {
+      <Button variant="outline">
+        <Link href="/tasks">Go back to tasks</Link>
+      </Button>
+    } />;
   }
 
   return (

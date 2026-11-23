@@ -27,7 +27,7 @@ const Tasks = () => {
             <span className="font-bold">{task.title}</span>
             </CardTitle>
           <CardDescription>{task.description}</CardDescription>
-         <Li nk
+         <Link
               href={`/tasks/${task.id}`}
               className="text-sm underline text-blue"
             >
