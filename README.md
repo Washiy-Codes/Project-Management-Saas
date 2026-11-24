@@ -1,4 +1,3 @@
-
 # Project Management SaaS
 
 A modern, full-stack project management application built with Next.js, React, TypeScript, and Tailwind CSS. Designed to help teams organize tasks, manage projects, collaborate, and track productivity in one centralized workspace.
