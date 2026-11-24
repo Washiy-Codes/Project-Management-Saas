@@ -178,5 +178,5 @@ This project is currently developed as a personal software development project. 
 
 If you find this project interesting, consider giving it a ⭐ on GitHub.
 
-**Built with ❤️ by Joseph Wachira**
+**Built with by Joseph Wachira**
 
